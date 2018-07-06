@@ -1,0 +1,11 @@
+- name: morning
+  entities:
+    switch.living_room_serenity_painting: on
+    switch.office_games_shelf_light: on
+    switch.entryway_piano_light: on
+- name: night
+  entities:
+    switch.living_room_serenity_painting: off
+    switch.office_games_shelf_light: off
+    switch.entryway_piano_light: off
+    switch.kitchen_shelf_light: off

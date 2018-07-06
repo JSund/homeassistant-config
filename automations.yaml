@@ -1,0 +1,130 @@
+- id: 329f52f35e7b47fab24c20e84400b6a4
+  alias: Turn on lights in the morning
+  trigger:
+    platform: time
+    at: 08:00:00
+  action:
+    service: scene.turn_on
+    entity_id: scene.morning
+- id: d304a677e39947d9b5e9f9ecc573a15c
+  alias: Turn off lights at night
+  trigger:
+    platform: time
+    at: 00:00:00
+  action:
+    service: scene.turn_on
+    entity_id: scene.night
+- id: 2fc8c9517cd64f06ab0c7c47760b57a1
+  alias: Link living room sofa light
+  trigger:
+    platform: state
+    entity_id:
+    - light.3wr_living_room_sofa_light
+    - light.ws_living_room_sofa_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - light.living_room_sofa_light
+- id: 786b0ed5570c46b2bef23edd5a9a36c7
+  alias: Link living room media unit light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_living_room_media_unit_light
+    - switch.ws_living_room_media_unit_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.living_room_media_unit_light
+- id: 1db4e6aa504a4a18bc68ecd578bef958
+  alias: Link living room window light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_living_room_window_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.living_room_window_light
+- id: 414b5dcc48c548d6bb69c3ff9145cf7a
+  alias: Link office desk light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_office_desk_light
+    - switch.ws_office_desk_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.office_desk_light
+- id: e1ccd95f74cd438595e6b566b3d29290
+  alias: Link office games shelf light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_office_games_shelf_light
+    - switch.ws_office_games_shelf_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.office_games_shelf_light
+- id: 4a05b64acd6541b48c4b76eed163f886
+  alias: Link office window light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_office_window_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.office_window_light
+- id: 47c8994135cb47b5889d3ff3f20d5cb6
+  alias: Link bedroom TV
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_bedroom_tv
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.bedroom_tv
+- id: 09bbe8f9050043b2919b2f213de9ad36
+  alias: Link bedroom window light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_bedroom_window_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.bedroom_window_light
+- id: 2ca61952cfa448a680fc566f0f27b4a6
+  alias: Link entryway floor light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_entryway_floor_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.entryway_floor_light
+- id: 947c6baca67f40c8adffbf30a2df0ed3
+  alias: Link entryway piano light
+  trigger:
+    platform: state
+    entity_id:
+    - switch.3wr_entryway_piano_light
+  action:
+    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+    entity_id:
+    - switch.entryway_piano_light

@@ -1,0 +1,62 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.living_room
+    - group.office
+    - group.bedroom
+    - group.kitchen
+    - group.entryway
+living_room_view:
+  view: yes
+  icon: mdi:sofa
+  entities:
+    - group.living_room
+living_room:
+  name: Living Room
+  entities:
+    - light.living_room_sofa_light
+    - switch.living_room_media_unit_light
+    - switch.living_room_window_light
+    - switch.living_room_serenity_painting
+office_view:
+  view: yes
+  icon: mdi:monitor
+  entities:
+    - group.office
+office:
+  name: Office
+  entities:
+    - switch.office_desk_light
+    - switch.office_games_shelf_light
+    - switch.office_window_light
+bedroom-view:
+  view: yes
+  icon: mdi:bed-empty
+  entities:
+    - group.bedroom
+bedroom:
+  name: Bedroom
+  entities:
+    - switch.bedroom_tv
+    - switch.bedroom_window_light
+kitchen-view:
+  view: yes
+  icon: mdi:silverware-variant
+  entities:
+    - group.kitchen
+kitchen:
+  name: Kitchen
+  entities:
+    - switch.kitchen_shelf_light
+    - switch.kitchen_window_light
+entryway-view:
+  view: yes
+  icon: mdi:door
+  entities:
+    - group.entryway
+entryway:
+  name: Entryway
+  entities:
+    - switch.entryway_floor_light
+    - switch.entryway_piano_light
