@@ -63,11 +63,11 @@ logbook:
 #map:
 
 # Track the sun
-sun:
+#sun:
 
 # Weather prediction
-sensor:
-  - platform: yr
+#sensor:
+#  - platform: yr
 
 # Text to speech
 #tts:
