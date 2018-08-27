@@ -1,11 +1,12 @@
 - id: 329f52f35e7b47fab24c20e84400b6a4
   alias: Turn on lights in the morning
   trigger:
+  - at: '8:00:00'
     platform: time
-    at: 08:00:00
+  condition: []
   action:
+  - entity_id: scene.morning
     service: scene.turn_on
-    entity_id: scene.morning
 - id: d304a677e39947d9b5e9f9ecc573a15c
   alias: Turn off lights at night
   trigger:
