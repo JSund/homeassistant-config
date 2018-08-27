@@ -66,3 +66,22 @@ entryway_:
   entities:
     - switch.entryway_floor_light
     - switch.entryway_piano_light
+system:
+  name: System
+  view: yes
+  icon: mdi:server
+  entities:
+    - group.system_
+    - group.ups_
+system_:
+  name: System
+  entities:
+    - sensor.cpu_temperature
+ups_:
+  name: UPS
+  entities:
+    - sensor.ups_status
+    - sensor.ups_load
+    - sensor.ups_battery_charge
+    - sensor.ups_battery_runtime
+    - sensor.ups_charger_status

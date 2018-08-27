@@ -80,6 +80,24 @@ logbook:
 tellstick:
   signal_repetitions: 3
 
+sensor:
+  # UPS monitoring
+  - platform: nut
+    name: UPS
+    username: monuser
+    password: !secret ups_password
+    resources:
+      - ups.status.display
+      - ups.load
+      - battery.charge
+      - battery.runtime
+  # Thermal monitoring
+  - platform: command_line
+    name: CPU temperature
+    command: 'cat /sys/class/thermal/thermal_zone0/temp'
+    unit_of_measurement: '°C'
+    value_template: '{{ value | multiply(0.001) | round(0) }}'
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
