@@ -15,6 +15,19 @@
   action:
     service: scene.turn_on
     entity_id: scene.night
+- id: ea98e4ef9ae6d93ba009ca22458d58b6
+  alias: Front door left open
+  trigger:
+    platform: state
+    entity_id: switch.front_door
+    from: 'off'
+    to: 'on'
+    for:
+      minutes: 5
+  action:
+    - service: notify.notify
+      data:
+        message: Front door has been left open
 - id: 2fc8c9517cd64f06ab0c7c47760b57a1
   alias: Link living room sofa light
   trigger:
