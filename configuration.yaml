@@ -98,6 +98,14 @@ sensor:
     unit_of_measurement: '°C'
     value_template: '{{ value | multiply(0.001) | round(0) }}'
 
+binary_sensor:
+  - platform: template
+    sensors:
+      front_door_status:
+        friendly_name: Front door
+        device_class: door
+        value_template: "{{ is_state('switch.front_door', 'on') }}"
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

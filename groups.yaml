@@ -66,6 +66,7 @@ entryway_:
   entities:
     - switch.entryway_floor_light
     - switch.entryway_piano_light
+    - binary_sensor.front_door_status
 system:
   name: System
   view: yes
