@@ -64,6 +64,7 @@ entryway:
 entryway_:
   name: Entryway
   entities:
+    - light.aurora
     - switch.entryway_floor_light
     - switch.entryway_piano_light
     - binary_sensor.front_door_status
