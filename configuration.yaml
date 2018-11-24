@@ -116,6 +116,15 @@ notify:
   gcm_api_key: !secret gcm_api_key
   gcm_sender_id: !secret gcm_sender_id
 
+google_assistant:
+  project_id: !secret gcp_project_id
+  api_key: !secret gcp_homegraph_key
+  exposed_domains:
+    - switch
+    - light
+    - group
+  expose_by_default: false
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
