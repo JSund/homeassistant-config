@@ -1,11 +1,22 @@
 - name: morning
   entities:
-    switch.living_room_serenity_painting: on
-    switch.office_games_shelf_light: on
     switch.entryway_piano_light: on
+    switch.kitchen_shelf_light: on
+    switch.kitchen_window_light: on
+    switch.living_room_serenity_painting: on
+    switch.living_room_window_light: on
+    switch.office_games_shelf_light: on
+    switch.office_window_light: on
+- name: day
+  entities:
+    switch.bedroom_window_light: on
 - name: night
   entities:
-    switch.living_room_serenity_painting: off
-    switch.office_games_shelf_light: off
+    switch.bedroom_window_light: off
     switch.entryway_piano_light: off
     switch.kitchen_shelf_light: off
+    switch.kitchen_window_light: off
+    switch.living_room_serenity_painting: off
+    switch.living_room_window_light: off
+    switch.office_games_shelf_light: off
+    switch.office_window_light: off
