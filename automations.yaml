@@ -19,7 +19,7 @@
   alias: Turn off lights at night
   trigger:
     platform: time
-    at: '00:00:00'
+    at: 00:00:00
   action:
     service: scene.turn_on
     entity_id: scene.night
@@ -33,9 +33,9 @@
     for:
       minutes: 5
   action:
-    - service: notify.notify
-      data:
-        message: Front door has been left open
+  - service: notify.notify
+    data:
+      message: Front door has been left open
 - id: 2fc8c9517cd64f06ab0c7c47760b57a1
   alias: Link living room sofa light
   trigger:
@@ -150,3 +150,16 @@
       {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
     entity_id:
     - switch.entryway_piano_light
+- id: '1546800010347'
+  alias: Certificate expiry
+  trigger:
+  - below: '14'
+    entity_id: sensor.ssl_certificate_expiry
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: TLS certificate about to expire
+      notification_id: cert
+      title: Certificate expiration
+    service: persistent_notification.create

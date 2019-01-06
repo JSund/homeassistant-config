@@ -97,6 +97,10 @@ sensor:
     command: 'cat /sys/class/thermal/thermal_zone0/temp'
     unit_of_measurement: '°C'
     value_template: '{{ value | multiply(0.001) | round(0) }}'
+  # TLS certificate monitoring
+  - platform: cert_expiry
+    host: !secret host
+    port: !secret port
 
 binary_sensor:
   - platform: template
