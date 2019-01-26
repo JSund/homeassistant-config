@@ -114,6 +114,11 @@ light:
   - platform: nanoleaf_aurora
     host: 192.168.4.7
     token: !secret nanoleaf_aurora_token
+  - platform: group
+    name: Wardrobe
+    entities:
+      - light.left_wardrobe
+      - light.right_wardrobe
 
 notify:
   platform: html5

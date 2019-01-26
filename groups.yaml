@@ -18,6 +18,7 @@ living_room_:
   name: Living Room
   entities:
     - light.living_room_sofa_light
+    - light.bookshelf
     - switch.living_room_media_unit_light
     - switch.living_room_window_light
     - switch.living_room_serenity_painting
@@ -42,6 +43,7 @@ bedroom:
 bedroom_:
   name: Bedroom
   entities:
+    - light.wardrobe
     - switch.bedroom_tv
     - switch.bedroom_window_light
 kitchen:
