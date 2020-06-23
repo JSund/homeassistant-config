@@ -163,3 +163,20 @@
       notification_id: cert
       title: Certificate expiration
     service: persistent_notification.create
+- id: '1553203358695'
+  alias: Wake up
+  trigger:
+  - at: 09:00:00
+    platform: time
+  condition: []
+  action:
+  - alias: ''
+    data:
+      brightness: 1
+      entity_id: light.wardrobe
+    service: light.turn_on
+  - data:
+      brightness: 64
+      entity_id: light.wardrobe
+      transition: 60
+    service: light.turn_on

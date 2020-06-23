@@ -3,22 +3,26 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.living_room_
-    - group.office_
-    - group.bedroom_
-    - group.kitchen_
-    - group.entryway_
+    - group.living_room_e
+    - group.office_e
+    - group.bedroom_e
+#    - group.kitchen_e
+    - group.entryway_e
+    - group.balcony_e
+    - group.climate_e
 living_room:
   name: Living Room
   view: yes
   icon: mdi:sofa
   entities:
-    - group.living_room_
-living_room_:
+    - group.living_room_e
+    - group.living_room_climate_e
+living_room_e:
   name: Living Room
   entities:
-    - light.living_room_sofa_light
     - light.bookshelf
+    - light.bookshelf_top
+    - light.living_room_sofa_light
     - switch.living_room_media_unit_light
     - switch.living_room_window_light
     - switch.living_room_serenity_painting
@@ -27,66 +31,104 @@ office:
   view: yes
   icon: mdi:monitor
   entities:
-    - group.office_
-office_:
+    - group.office_e
+office_e:
   name: Office
   entities:
     - switch.office_desk_light
-    - switch.office_games_shelf_light
-    - switch.office_window_light
+      # - switch.office_games_shelf_light
+      # - switch.office_window_light
 bedroom:
   name: Bedroom
   view: yes
   icon: mdi:bed-empty
   entities:
-    - group.bedroom_
-bedroom_:
+    - group.bedroom_e
+bedroom_e:
   name: Bedroom
   entities:
     - light.wardrobe
-    - switch.bedroom_tv
     - switch.bedroom_window_light
-kitchen:
-  name: Kitchen
-  view: yes
-  icon: mdi:silverware-variant
-  entities:
-    - group.kitchen_
-kitchen_:
-  name: Kitchen
-  entities:
-    - switch.kitchen_shelf_light
-    - switch.kitchen_window_light
+    - switch.bedroom_tv
+#kitchen:
+#  name: Kitchen
+#  view: yes
+#  icon: mdi:silverware-variant
+#  entities:
+#    - group.kitchen_e
+#kitchen_e:
+#  name: Kitchen
+#  entities:
+#    - switch.kitchen_shelf_light
+#    - switch.kitchen_window_light
 entryway:
   name: Entryway
   view: yes
   icon: mdi:door
   entities:
-    - group.entryway_
-entryway_:
+    - group.entryway_e
+entryway_e:
   name: Entryway
   entities:
-    - light.aurora
-    - switch.entryway_floor_light
-    - switch.entryway_piano_light
+    - light.nanoleaf
+      # - switch.entryway_floor_light
+      # - switch.entryway_piano_light
     - binary_sensor.front_door_status
+balcony:
+  name: Balcony
+  view: yes
+  icon: mdi:tree
+  entities:
+    - group.balcony_e
+    - group.balcony_climate_e
+balcony_e:
+  name: Balcony
+  entities:
+    - light.balcony_railing
+octoprint:
+  name: 3D Printer
+  view: yes
+  icon: mdi:printer-3d
+  entities:
+    - group.octoprint_e
+octoprint_e:
+  name: 3D Printer
+  entities:
+    - camera.octoprint_camera
 system:
   name: System
   view: yes
   icon: mdi:server
   entities:
-    - group.system_
-    - group.ups_
-system_:
+    - group.system_e
+    - group.ups_e
+system_e:
   name: System
   entities:
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    - sensor.disk_use_percent
     - sensor.cpu_temperature
     - sensor.ssl_certificate_expiry
-ups_:
+ups_e:
   name: UPS
   entities:
     - sensor.ups_status
     - sensor.ups_load
     - sensor.ups_battery_charge
     - sensor.ups_battery_runtime
-    - sensor.ups_charger_status
+climate_e:
+  name: Climate
+  entities:
+    - history_graph.temperature
+    - history_graph.humidity
+living_room_climate_e:
+  name: Living Room Climate
+  entities:
+    - history_graph.living_room_temperature
+    - history_graph.living_room_humidity
+balcony_climate_e:
+  name: Balcony Climate
+  entities:
+    - history_graph.balcony_temperature
+    - history_graph.balcony_humidity

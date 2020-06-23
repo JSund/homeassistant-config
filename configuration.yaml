@@ -30,6 +30,10 @@ frontend:
 # Enables configuration UI
 config:
 
+# Enable logging
+logger:
+  default: info
+
 http:
   # Secrets are defined in the file secrets.yaml
   ssl_certificate: !secret ssl_certificate
@@ -76,11 +80,20 @@ logbook:
 # Cloud
 #cloud:
 
+# System health in dev tools
+system_health:
+
 # TellStick integration
 tellstick:
-  signal_repetitions: 3
+  signal_repetitions: 1
 
 sensor:
+  - platform: tellstick
+    only_named:
+      - id: 135
+        name: Living room
+      - id: 151
+        name: Balcony
   # UPS monitoring
   - platform: nut
     name: UPS
@@ -101,6 +114,13 @@ sensor:
   - platform: cert_expiry
     host: !secret host
     port: !secret port
+  # System monitoring
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: memory_use_percent
+      - type: disk_use_percent
+        arg: /
 
 binary_sensor:
   - platform: template
@@ -110,8 +130,36 @@ binary_sensor:
         device_class: door
         value_template: "{{ is_state('switch.front_door', 'on') }}"
 
+history_graph:
+  temperature:
+    name: Temperature
+    entities:
+      - sensor.living_room_temperature
+      - sensor.balcony_temperature
+  humidity:
+    name: Humidity
+    entities:
+      - sensor.living_room_humidity
+      - sensor.balcony_humidity
+  living_room_temperature:
+    name: Living Room Temperature
+    entities:
+      - sensor.living_room_temperature
+  living_room_humidity:
+    name: Living Room Humidity
+    entities:
+      - sensor.living_room_humidity
+  balcony_temperature:
+    name: Balcony Temperature
+    entities:
+      - sensor.balcony_temperature
+  balcony_humidity:
+    name: Balcony Humidity
+    entities:
+      - sensor.balcony_humidity
+
 light:
-  - platform: nanoleaf_aurora
+  - platform: nanoleaf
     host: 192.168.4.7
     token: !secret nanoleaf_aurora_token
   - platform: group
@@ -119,6 +167,12 @@ light:
     entities:
       - light.left_wardrobe
       - light.right_wardrobe
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: !secret octoprint_stream_url
+    still_image_url: !secret octoprint_still_url
+    name: Octoprint Camera
 
 notify:
   platform: html5

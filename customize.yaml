@@ -1,6 +1,10 @@
 light.living_room_sofa_light:
   friendly_name: Sofa
   icon: mdi:lightbulb
+sensor.living_room_humidity:
+  icon: mdi:water-percent
+sensor.balcony_humidity:
+  icon: mdi:water-percent
 switch.living_room_media_unit_light:
   friendly_name: Media unit
   icon: mdi:lightbulb
