@@ -42,6 +42,10 @@ http:
   ip_ban_enabled: True
   login_attempts_threshold: 5
 
+# Enable mobile app integration
+mobile_app:
+
+
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
@@ -167,6 +171,11 @@ light:
     entities:
       - light.left_wardrobe
       - light.right_wardrobe
+  - platform: group
+    name: Media unit
+    entities:
+      - light.media_unit_left
+      - light.media_unit_right
 
 camera:
   - platform: mjpeg

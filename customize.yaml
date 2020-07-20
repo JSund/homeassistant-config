@@ -5,9 +5,9 @@ sensor.living_room_humidity:
   icon: mdi:water-percent
 sensor.balcony_humidity:
   icon: mdi:water-percent
-switch.living_room_media_unit_light:
-  friendly_name: Media unit
-  icon: mdi:lightbulb
+#switch.living_room_media_unit_light:
+#  friendly_name: Media unit
+#  icon: mdi:lightbulb
 switch.living_room_window_light:
   friendly_name: Window
   icon: mdi:lightbulb
@@ -23,21 +23,21 @@ switch.office_games_shelf_light:
 switch.office_window_light:
   friendly_name: Window
   icon: mdi:lightbulb
-switch.bedroom_tv:
-  friendly_name: TV
-  icon: mdi:television
+#switch.bedroom_tv:
+#  friendly_name: TV
+#  icon: mdi:television
 switch.bedroom_window_light:
   friendly_name: Window
   icon: mdi:lightbulb
-switch.kitchen_shelf_light:
-  friendly_name: Shelf
-  icon: mdi:lightbulb
-switch.kitchen_window_light:
-  friendly_name: Window
-  icon: mdi:lightbulb
-switch.entryway_floor_light:
-  friendly_name: Floor
-  icon: mdi:lightbulb
-switch.entryway_piano_light:
-  friendly_name: Piano
-  icon: mdi:lightbulb
+#switch.kitchen_shelf_light:
+#  friendly_name: Shelf
+#  icon: mdi:lightbulb
+#switch.kitchen_window_light:
+#  friendly_name: Window
+#  icon: mdi:lightbulb
+#switch.entryway_floor_light:
+#  friendly_name: Floor
+#  icon: mdi:lightbulb
+#switch.entryway_piano_light:
+#  friendly_name: Piano
+#  icon: mdi:lightbulb

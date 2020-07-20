@@ -22,8 +22,8 @@ living_room_e:
   entities:
     - light.bookshelf
     - light.bookshelf_top
+    - light.media_unit
     - light.living_room_sofa_light
-    - switch.living_room_media_unit_light
     - switch.living_room_window_light
     - switch.living_room_serenity_painting
 office:
@@ -49,7 +49,7 @@ bedroom_e:
   entities:
     - light.wardrobe
     - switch.bedroom_window_light
-    - switch.bedroom_tv
+      # - switch.bedroom_tv
 #kitchen:
 #  name: Kitchen
 #  view: yes
