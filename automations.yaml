@@ -36,18 +36,18 @@
   - service: notify.notify
     data:
       message: Front door has been left open
-- id: 2fc8c9517cd64f06ab0c7c47760b57a1
-  alias: Link living room sofa light
-  trigger:
-    platform: state
-    entity_id:
-    - light.3wr_living_room_sofa_light
-    - light.ws_living_room_sofa_light
-  action:
-    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
-      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
-    entity_id:
-    - light.living_room_sofa_light
+#- id: 2fc8c9517cd64f06ab0c7c47760b57a1
+#  alias: Link living room sofa light
+#  trigger:
+#    platform: state
+#    entity_id:
+#    - light.3wr_living_room_sofa_light
+#    - light.ws_living_room_sofa_light
+#  action:
+#    service_template: '{% if trigger.to_state.state == "on" %} homeassistant.turn_on
+#      {% elif trigger.to_state.state == "off" %} homeassistant.turn_off {% endif %}'
+#    entity_id:
+#    - light.living_room_sofa_light
 #- id: 786b0ed5570c46b2bef23edd5a9a36c7
 #  alias: Link living room media unit light
 #  trigger:

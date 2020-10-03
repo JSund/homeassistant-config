@@ -23,7 +23,7 @@ living_room_e:
     - light.bookshelf
     - light.bookshelf_top
     - light.media_unit
-    - light.living_room_sofa_light
+    - light.sofa
     - switch.living_room_window_light
     - switch.living_room_serenity_painting
 office:
@@ -48,6 +48,7 @@ bedroom_e:
   name: Bedroom
   entities:
     - light.wardrobe
+    - light.nightstand
     - switch.bedroom_window_light
       # - switch.bedroom_tv
 #kitchen:
