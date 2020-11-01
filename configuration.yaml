@@ -71,7 +71,7 @@ logbook:
 #map:
 
 # Track the sun
-#sun:
+sun:
 
 # Weather prediction
 #sensor:
